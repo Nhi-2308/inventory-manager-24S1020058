@@ -78,3 +78,18 @@ def view_inventory():
     for product in products:
         # Ví dụ: Mì tôm - Giá: 5000 - SL: 100
         print(f"Sản phẩm: {product['name']} - Giá: {product['price']} - SL: {product['qty']}")
+
+def check_low_stock():
+    print("\n--- CẢNH BÁO HÀNG TỒN KHO THẤP (< 5) ---")
+    
+    low_stock_found = False
+    
+    # Duyệt danh sách sản phẩm
+    for product in products:
+        # Kiểm tra nếu số lượng tồn kho dưới 5
+        if product['qty'] < 5:
+            print(f"⚠️ Cảnh báo: {product['name']} chỉ còn {product['qty']} sản phẩm!")
+            low_stock_found = True
+            
+    if not low_stock_found:
+        print("Tất cả sản phẩm đều có số lượng tồn kho an toàn.")
