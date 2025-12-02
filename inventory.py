@@ -62,3 +62,19 @@ def add_product():
     # Thêm dictionary sản phẩm vào danh sách toàn cục products
     products.append(product)
     print(f"Đã nhập hàng thành công: {name} (SL: {quantity}).")
+
+def view_inventory():
+    print("\n--- TỒN KHO HIỆN TẠI ---")
+    if not products:
+        print("Kho hàng trống.")
+        return
+        
+    # Duyệt danh sách và in ra thông tin
+    product = {
+    'name': 'name',
+    'price': 'price',
+    'qty': 'quantity'
+    }
+    for product in products:
+        # Ví dụ: Mì tôm - Giá: 5000 - SL: 100
+        print(f"Sản phẩm: {product['name']} - Giá: {product['price']} - SL: {product['qty']}")
