@@ -38,3 +38,27 @@ def main():
  
 if __name__ == "__main__": 
     main()
+
+def add_product():
+    """
+    Nhập thông tin sản phẩm (tên, giá, số lượng) và thêm vào danh sách products.
+    """
+    print("\n--- NHẬP HÀNG MỚI ---")
+    name = input("Nhập tên sản phẩm: ")
+    # Yêu cầu nhập giá và số lượng, sử dụng khối try-except để xử lý lỗi nhập liệu
+    try:
+        # Chuyển đổi giá và số lượng sang số nguyên (int)
+        price = int(input("Nhập giá bán: "))
+        quantity = int(input("Nhập số lượng tồn kho: "))
+    except ValueError:
+        print("Lỗi: Giá và Số lượng phải là các số nguyên hợp lệ.")
+        return # Thoát khỏi hàm nếu có lỗi nhập liệu
+    # Tạo dictionary sản phẩm theo cấu trúc yêu cầu: {'name': 'Mì tôm', 'price': 5000, 'qty': 100}
+    product = {
+        'name': 'Mì tôm',
+        'price': 5000,
+        'qty': 100
+    }
+    # Thêm dictionary sản phẩm vào danh sách toàn cục products
+    products.append(product)
+    print(f"Đã nhập hàng thành công: {name} (SL: {quantity}).")
